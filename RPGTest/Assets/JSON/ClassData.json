@@ -1,0 +1,22 @@
+{
+    "Classes":[
+        {
+            "CharName": "Hank",
+            "ClassName": "Warrior",
+            "Skill": "Power Attack",
+            "MovementSpeed": 5
+        },
+        {
+            "CharName": "Merlyn",
+            "ClassName": "Mage",
+            "Skill": "Fireball",
+            "MovementSpeed": 3
+        },
+        {
+            "CharName": "Bob",
+            "ClassName": "Rogue",
+            "Skill": "Sneak  Attack",
+            "MovementSpeed": 8
+        }
+    ]
+}
