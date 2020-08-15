@@ -17,19 +17,38 @@ public class ClassSelectMenu : MonoBehaviour
 
     private int currentIndex = 0;
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        PreviousClassButton.onClick.AddListener(() => {
+            currentIndex--;
+            UpdateUI();
+        });
+
+        NextClassButton.onClick.AddListener(() => {
+            currentIndex++;
+            UpdateUI();
+        });
+    }
+    
     void Start()
     {
         PreviousClassButton.gameObject.SetActive(false);
 
-        FillTexts();
+        UpdateUI();
     }
 
-    private void FillTexts()
+    private void UpdateUI()
     {
-        CharNameText.text = ClassManager.GetInstance().ClassJson.Classes[currentIndex].CharName;
-        ClassNameText.text = ClassManager.GetInstance().ClassJson.Classes[currentIndex].ClassName;
-        SkillNameText.text = ClassManager.GetInstance().ClassJson.Classes[currentIndex].Skill;
-        MovementText.text = ClassManager.GetInstance().ClassJson.Classes[currentIndex].MovementSpeed.ToString();
+        ClassModelJSON[] classes = ClassManager.GetInstance().ClassJson.Classes;
+
+        currentIndex = Mathf.Clamp(currentIndex, 0, classes.Length);
+
+        CharNameText.text = classes[currentIndex].CharName;
+        ClassNameText.text = classes[currentIndex].ClassName;
+        SkillNameText.text = classes[currentIndex].Skill;
+        MovementText.text = classes[currentIndex].MovementSpeed.ToString();
+
+        PreviousClassButton.gameObject.SetActive(currentIndex > 0);
+        NextClassButton.gameObject.SetActive(currentIndex < classes.Length - 1);
     }
 }
