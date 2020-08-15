@@ -2,7 +2,7 @@
 
 [System.Serializable]
 public class ClassesJSON{
-    public ClassModelJSON[] ClassJson;
+    public ClassModelJSON[] Classes;
 }
 
 [System.Serializable]
