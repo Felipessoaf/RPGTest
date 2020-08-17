@@ -6,6 +6,8 @@ using TMPro;
 
 public class ClassSelectMenu : MonoBehaviour
 {
+    public Image ClassImage;
+
     public TMP_Text CharNameText;
     public TMP_Text ClassNameText;
     public TMP_Text SkillNameText;
@@ -14,6 +16,8 @@ public class ClassSelectMenu : MonoBehaviour
 
     public Button PreviousClassButton; 
     public Button NextClassButton; 
+
+    public Sprite[] ClassSprites;
 
     private int currentIndex = 0;
 
@@ -50,5 +54,7 @@ public class ClassSelectMenu : MonoBehaviour
 
         PreviousClassButton.gameObject.SetActive(currentIndex > 0);
         NextClassButton.gameObject.SetActive(currentIndex < classes.Length - 1);
+
+        ClassImage.sprite = ClassSprites[currentIndex];
     }
 }
