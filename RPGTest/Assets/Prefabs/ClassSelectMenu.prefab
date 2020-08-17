@@ -410,6 +410,7 @@ MonoBehaviour:
   MovementText: {fileID: 1687666715188178863}
   PreviousClassButton: {fileID: 1687666715339108432}
   NextClassButton: {fileID: 1687666716767521459}
+  SelectClassButton: {fileID: 1687666716608826242}
   ClassSprites:
   - {fileID: 21300000, guid: 6a9f816fb34348b4c8b94d2d3609e7cc, type: 3}
   - {fileID: 21300000, guid: 035760eb943dd514989b6f27b006617a, type: 3}

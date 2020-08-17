@@ -16,6 +16,7 @@ public class ClassSelectMenu : MonoBehaviour
 
     public Button PreviousClassButton; 
     public Button NextClassButton; 
+    public Button SelectClassButton; 
 
     public Sprite[] ClassSprites;
 
@@ -31,6 +32,12 @@ public class ClassSelectMenu : MonoBehaviour
         NextClassButton.onClick.AddListener(() => {
             currentIndex++;
             UpdateUI();
+        });
+
+        SelectClassButton.onClick.AddListener(() => {
+            PlayerPrefs.SetInt("classId", currentIndex);
+            GameManager.StartDelegate();
+            gameObject.SetActive(false);
         });
     }
     
